@@ -80,9 +80,31 @@
     </div>
 
     <script>
-        function posted() {
-            document.getElementById("message").innerText =
-                "Your words have been written. ❤️";
+       async function posted() {
+    const content = document.querySelector("textarea").value;
+
+    if (!content.trim()) {
+        document.getElementById("message").innerText =
+            "Please write something first.";
+        return;
+    }
+
+    const { error } = await supabase
+        .from("entries")
+        .insert([{ content: content }]);
+
+    if (error) {
+        document.getElementById("message").innerText =
+            "Something went wrong. Please try again.";
+        console.error(error);
+        return;
+    }
+
+    document.getElementById("message").innerText =
+        "Your words have been written. ❤️";
+
+    document.querySelector("textarea").value = "";
+}
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
