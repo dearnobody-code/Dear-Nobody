@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dear Nobody</title>
+
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background: #f8f5f0;
+            margin: 0;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 250px;
+            padding: 20px;
+            box-sizing: border-box;
+            font-family: Georgia, serif;
+            font-size: 17px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            resize: vertical;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .message {
+            margin-top: 20px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Dear Nobody</h1>
+
+        <p class="subtitle">
+            Write what you can't always say out loud.
+        </p>
+
+        <textarea placeholder="Dear Nobody, ..."></textarea>
+
+        <br>
+
+        <button onclick="posted()">Leave it here</button>
+
+        <p class="message" id="message"></p>
+
+    </div>
+
+    <script>
+        function posted() {
+            document.getElementById("message").innerText =
+                "Your words have been written. ❤️";
+        }
+    </script>
+
+</body>
+</html>
