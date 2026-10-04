@@ -85,6 +85,15 @@
                 "Your words have been written. ❤️";
         }
     </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const { createClient } = supabase;
+  const db = createClient(
+    'https://tfzpuywnhtjqkejpzngn.supabase.co',
+    'sb_publishable_8a7oxEYMAcngwjBA9r6XQw_pZAsqvy-'
+  );
 
+  db.from('YOUR_TABLE_NAME').select('*').then(result => console.log(result));
+</script>
 </body>
 </html>
